@@ -1,0 +1,39 @@
+wmaloader for Windows
+---------------------
+
+wmaloader is an application that serves up firmware to a Linksys WMA11B Media Adapter. This package allows the wmaloader application to run on Windows as a service.  It includes a default image - wmaslimp3 (renamed to wma.img) - but can be modified to serve any image you like.
+
+INITIAL SETUP
+
+If the service is not already installed (this should be done by the application installer), you can install it manually with:
+
+	winsw.exe install
+	winsw.exe start
+
+You will need to add wmaloader.exe to your firewall exceptions (installed by default in "Program Files\wmaloader").
+
+
+CONFIGURATION
+
+To modify the image sent to the WMA11B, first stop the service:
+
+	winsw.exe stop
+	winsw.exe uninstall
+
+Next, copy the image to image\wma.img (or edit the winsw.xml file to point to the new .img path).
+
+Then install and start the service:
+
+	winsw.exe install
+	winsw.exe start
+
+The uinstall/install steps should only be necessary if you modify the winsw.xml file.
+
+
+SOURCES
+
+The precompiled Windows binaries:
+http://jcsu.jesus.cam.ac.uk/~acw43/projects/wma11b/wmaloader-0.2/
+
+The winsw service wrapper:
+http://projectkenai.com/projects/winsw

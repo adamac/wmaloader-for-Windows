@@ -1,0 +1,7 @@
+﻿<configuration>
+  <id>wmaloader</id>
+  <name>wmaloader service</name>
+  <description>This service serves firmware to a Linksys WMA11b Media Adapter</description>
+  <executable>wmaloader.exe</executable>
+  <arguments>--image "%BASE%\image\wma.img"</arguments>
+</configuration>
